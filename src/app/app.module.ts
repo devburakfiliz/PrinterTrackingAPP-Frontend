@@ -15,6 +15,9 @@ import { LoginComponent } from './components/login/login.component';
 import { PrinterImageComponent } from './components/printer-image/printer-image.component';
 import { StorageComponent } from './components/storage/storage.component';
 import { NaviComponent } from './components/navi/navi.component';
+import { AuthInterceptor } from './intercepters/auth.interceptor';
+import { TonerComponent } from './components/toner/toner.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,9 @@ import { NaviComponent } from './components/navi/navi.component';
     LoginComponent,
     PrinterImageComponent,
     StorageComponent,
-    NaviComponent
+    NaviComponent,
+    TonerComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +41,9 @@ import { NaviComponent } from './components/navi/navi.component';
       positionClass:"toast-bottom-right"
     })
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

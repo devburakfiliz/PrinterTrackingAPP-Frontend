@@ -1,12 +1,5 @@
 
-<div>
-  <div class="button-container ">
-
-  </div>
-  
-
-</div>
-<h1 class="title">YAZICI ENVANTERİ</h1>
+<h1 class="title">TONER ENVANTERİ</h1>
 <button style="    background: #2581DC; float: left; margin: 15px; " >YAZICI EKLE</button>    
 
 <button  style="    background: #870202; float: right;margin: 15px; " >YAZICI SİL</button>    
@@ -24,20 +17,18 @@
         
         </tr>
         </thead>
-        <tbody *ngFor="let printer of printers">
+        <tbody *ngFor="let toner of toners">
         <tr>
-            <td>{{printer.id}}</td>
-            <td>{{printer.serialNumber}}</td>
-            <td>{{printer.brandName}}</td>
-            <td>{{printer.modelName}}</td>
+            <td>{{toner.id}}</td>
+            <td>{{toner.serialNumber}}</td>
+            <td>{{toner.brandName}}</td>
+            <td>{{toner.modelName}}</td>
  
         </tr>
         
         <tbody>
     </table>
     
-</div>
-
-
     
 
+</div>
