@@ -96,26 +96,8 @@ background-color: #0a0883;
 form input[type="radio"]{
     display: none;
 }
-form .button{
-    height: 45px;
-    margin: 45px 0;
-}
-form .button input{
-    height: 100%;
-    width: 100%;
-    outline: none;
-    color: #fff;
-    border: none;
-    font-size: 18px;
-    font-weight: 500;
-    border-radius: 5px;
-    letter-spacing: 1px;
-    background: linear-gradient(123deg, #71b8e7,#0a0883);
 
-}
-form .button input :hover{
-    background: linear-gradient(-123deg, #71b8e7,#0a0883);
-}
+
 @media (max-width: 584px){
     .container{
         max-width: 100%;
@@ -134,4 +116,70 @@ form .button input :hover{
     .user_details::-webkit-scrollber{
      width: 0;
     }
+    
 }
+body {
+    background-color: #181D31;
+    height: 100vh;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  button {
+    width: 150px;
+    
+    text-decoration: none;
+    text-align: center;
+    padding: 15px 0;
+    border-radius: 50px;
+    color: #fff;
+    transition: all ease 0.2s;
+    -webkit-box-shadow: 2px 3px 2px 0px rgba(0, 0, 0, 0.17);
+    -moz-box-shadow: 2px 3px 2px 0px rgba(0, 0, 0, 0.17);
+    box-shadow: 2px 3px 2px 0px rgba(0, 0, 0, 0.17);
+    transition: all ease 0.2s;
+    position: relative;
+    overflow: hidden;
+    /* font-family: "McLaren", cursive; */
+    font-weight: 500;
+    border: none;
+    font-size: 20px;
+  }
+  
+  
+  button::after {
+    content: "";
+    width: 30px;
+    height: 200px;
+    position: absolute;
+    left: -20px;
+    top: 0;
+    margin-top: -20px;
+    background: #fff;
+    opacity: 0.6;
+    filter: blur(20px);
+    animation: login-blur 3s infinite;
+    animation-delay: 0s;
+    transform-origin: top;
+  }
+  
+  @keyframes login-blur {
+    from {
+      transform: translate(0) rotate(45deg);
+    }
+    to {
+      transform: translateX(370px) rotate(45deg);
+    }
+  }
+  
+  /* hover event, delete if you dont need it*/
+  button:hover {
+    transform: translateY(-5px);
+    color: rgb(240, 240, 240);
+    cursor: pointer;
+  }

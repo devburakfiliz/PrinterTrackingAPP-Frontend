@@ -4,5 +4,5 @@ export interface Printer {
     modelId:number;
     serialNumber:string;
     modelName:string;
-    brandName:number;
+    brandName:string;
 }
