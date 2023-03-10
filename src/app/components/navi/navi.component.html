@@ -12,19 +12,18 @@
         <li>
           <a href="#!"></a>
         </li>
-       
-        <li>
+        <li *ngIf="claims.includes('storage')">
           <a routerLink="printer">Yazıcılar</a>
         </li>
-        <li>
+        <li *ngIf="claims.includes('provider')">
           <a routerLink="toner">Tonerler</a>
         </li>
         
         <li *ngIf="!isLoggedIn">
           <a routerLink="login">Giriş Yap</a>
         </li>
-        <li>
-          <a  routerLink="login">Çıkış Yap</a>
+        <li *ngIf="isLoggedIn">
+          <a (click)="logout()" >Çıkış Yap</a>
         </li>
       </ul>
     </nav>

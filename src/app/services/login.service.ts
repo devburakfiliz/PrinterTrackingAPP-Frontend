@@ -24,5 +24,9 @@ export class LoginService {
       return false;
     }
   }
+
+  getClaims(){
+    return this.httpClient.get<string[]>(this.apiUrl + "getclaims");
+  }
 }
 
