@@ -1,0 +1,32 @@
+
+
+<h1 class="title">Kullanıcı Listesi</h1>
+
+<div class="table-wrapper">
+  
+    <table class="fl-table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>E-Mail</th>
+            <th>İsim</th>
+            <th>Soyisim</th>
+            
+        
+        </tr>
+        </thead>
+        <tbody *ngFor="let user of users">
+        <tr>
+            <td>{{user.id}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+ 
+        </tr>
+        
+        <tbody>
+    </table>
+    
+    
+
+</div>

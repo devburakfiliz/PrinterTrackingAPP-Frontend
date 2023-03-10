@@ -20,6 +20,8 @@ import { AdminPageComponent } from '../admin-page/admin-page.component';
 import { PrinterImageComponent } from '../printerApp/printer-image/printer-image.component';
 import { StorageComponent } from '../storage/storage.component';
 import { PrinterComponent } from '../printerApp/printer/printer.component';
+import { UserComponent } from '../user/user.component';
+
 
 
 @NgModule({
@@ -39,6 +41,7 @@ import { PrinterComponent } from '../printerApp/printer/printer.component';
     PrinterFilterPipe,
     AdminPageComponent,
     PrinterComponent,
+    UserComponent,
   ],
   imports: [
     CommonModule,

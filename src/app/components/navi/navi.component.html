@@ -12,11 +12,14 @@
         <li>
           <a href="#!"></a>
         </li>
-        <li *ngIf="claims.includes('storage')">
+        <li>
           <a routerLink="printer">Yazıcılar</a>
         </li>
-        <li *ngIf="claims.includes('provider')">
+        <li >
           <a routerLink="toner">Tonerler</a>
+        </li>
+        <li *ngIf="claims.includes('admin')">
+          <a routerLink="admin">ADMİN PANELİ</a>
         </li>
         
         <li *ngIf="!isLoggedIn">
@@ -25,7 +28,16 @@
         <li *ngIf="isLoggedIn">
           <a (click)="logout()" >Çıkış Yap</a>
         </li>
+
       </ul>
     </nav>
   </div>
 </section>
+
+<!-- 
+<li *ngIf="claims.includes('storage')">
+  <a routerLink="printer">Yazıcılar</a>
+</li>
+<li *ngIf="claims.includes('provider')">
+  <a routerLink="toner">Tonerler</a>
+</li> -->

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-home',
@@ -6,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  isLoggedIn = false
+
     imageUrl = "https://localhost:44354/uploads/images/"
-   constructor(){}
+   constructor(private router:Router
+    ,private loginService:LoginService){}
    ngOnInit(): void {
      
    }
@@ -31,4 +36,7 @@ export class HomeComponent implements OnInit {
     let path = this.imageUrl + "4db523e8-5ab4-4371-b62c-97ef5d1dd199.png"
     return path;
   }
+  
+
+
 }

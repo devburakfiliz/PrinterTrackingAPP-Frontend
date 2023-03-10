@@ -20,9 +20,9 @@
           {{ filterText }} aradınız.
         </div>
       
-      <button routerLink="/printer/add" style="    background: #2581DC; float: left; margin: 15px; " >YAZICI EKLE</button>    
+      <button *ngIf="claims.includes('storage')||claims.includes('admin')" routerLink="/printer/add" style="    background: #2581DC; float: left; margin: 15px; " >YAZICI EKLE</button>    
       
-      <button  style="    background: #870202; float: right;margin: 15px; " >YAZICI SİL</button>    
+      <button *ngIf="claims.includes('storage')||claims.includes('admin')"  style="    background: #870202; float: right;margin: 15px; " >YAZICI SİL</button>    
       
       <div class="table-wrapper">
         
