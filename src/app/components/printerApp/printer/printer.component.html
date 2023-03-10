@@ -1,0 +1,58 @@
+
+<div class="boddy">
+    <div>
+        <div class="button-container ">
+      
+        </div> 
+      
+      </div>
+      <h1 class="title">YAZICI ENVANTERİ</h1>
+      <div class="mb-3">
+          <input
+            type="text"
+            [(ngModel)]="filterText"
+            class="form-control"
+            id="filterText"
+            placeholder="Yazıcı Seri Numarası Giriniz."
+          />
+        </div>
+        <div *ngIf="filterText" class="alert alert-success">
+          {{ filterText }} aradınız.
+        </div>
+      
+      <button routerLink="/printer/add" style="    background: #2581DC; float: left; margin: 15px; " >YAZICI EKLE</button>    
+      
+      <button  style="    background: #870202; float: right;margin: 15px; " >YAZICI SİL</button>    
+      
+      <div class="table-wrapper">
+        
+          <table class="fl-table">
+              <thead>
+              <tr>
+                  <th>ID</th>
+                  <th>Yazıcı Seri Numarası</th>
+                  <th>Yazıcı Marka</th>
+                  <th>Yazıcı Model</th>
+                  
+              
+              </tr>
+              </thead>
+              <tbody *ngFor="let printer of printers | printerFilter:filterText,filter">
+              <tr>
+                  <td>{{printer.id}}</td>
+                  <td>{{printer.serialNumber}}</td>
+                  <td>{{printer.brandName}}</td>
+                  <td>{{printer.modelName}}</td>
+       
+              </tr>
+              
+              <tbody>
+          </table>
+          
+      </div>
+      
+      
+</div>
+
+    
+

@@ -10,6 +10,9 @@ import { HttpClient } from '@angular/common/http';
 export class PrinterComponent implements OnInit {
   printers : Printer[]=[];
   dataLoaded = false ;
+  currentPrinter:Printer | null;
+  filterText:""
+
 
 
 
@@ -25,5 +28,22 @@ export class PrinterComponent implements OnInit {
       this.printers=response.data
       this.dataLoaded=true;
     })
+  }
+   setCurrentPrinter(printer:Printer){
+    this.currentPrinter=printer;
+  }
+   getAllPrinterClass(){
+    if (!this.currentPrinter) {
+      return "list-group-item active"     
+    }else{
+      return"list-group-item"
+
+    }
+    
+
+  }
+    
+  reset(){
+    this.currentPrinter = null;
   }
 }

@@ -10,14 +10,22 @@ import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PrinterComponent } from './components/printer/printer.component';
+import { PrinterComponent } from './components/printerApp/printer/printer.component';
 import { LoginComponent } from './components/login/login.component';
-import { PrinterImageComponent } from './components/printer-image/printer-image.component';
+import { PrinterImageComponent } from './components/printerApp/printer-image/printer-image.component';
 import { StorageComponent } from './components/storage/storage.component';
 import { NaviComponent } from './components/navi/navi.component';
 import { AuthInterceptor } from './intercepters/auth.interceptor';
-import { TonerComponent } from './components/toner/toner.component';
+import { TonerComponent } from './components/tonerApp/toner/toner.component';
 import { HomeComponent } from './components/home/home.component';
+import { PrinterAddComponent } from './components/printerApp/printer-add/printer-add.component';
+import { PrinterDeleteComponent } from './components/printerApp/printer-delete/printer-delete.component';
+import { PrinterUpdateComponent } from './components/printerApp/printer-update/printer-update.component';
+import { TonerAddComponent } from './components/tonerApp/toner-add/toner-add.component';
+import { TonerDeleteComponent } from './components/tonerApp/toner-delete/toner-delete.component';
+import { TonerUpdateComponent } from './components/tonerApp/toner-update/toner-update.component';
+import { PrinterFilterPipe } from './components/pipes/printer-filter.pipe';
+import { AdminPageComponent } from './components/admin-page/admin-page.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +36,15 @@ import { HomeComponent } from './components/home/home.component';
     StorageComponent,
     NaviComponent,
     TonerComponent,
-    HomeComponent
+    HomeComponent,
+    PrinterAddComponent,
+    PrinterDeleteComponent,
+    PrinterUpdateComponent,
+    TonerAddComponent,
+    TonerDeleteComponent,
+    TonerUpdateComponent,
+    PrinterFilterPipe,
+    AdminPageComponent
   ],
   imports: [
     BrowserModule,
