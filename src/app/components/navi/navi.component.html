@@ -20,7 +20,7 @@
           <a routerLink="toner">Tonerler</a>
         </li>
         
-        <li>
+        <li *ngIf="!isLoggedIn">
           <a routerLink="login">Giriş Yap</a>
         </li>
         <li>
