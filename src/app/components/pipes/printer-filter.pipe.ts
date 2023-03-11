@@ -12,6 +12,7 @@ export class PrinterFilterPipe implements PipeTransform {
         p.serialNumber.toLocaleLowerCase().indexOf(filterText)!==-1
       ||p.modelName.toLocaleLowerCase().indexOf(filterText)!==-1
       ||p.brandName.toLocaleLowerCase().indexOf(filterText)!==-1
+      ||p.id.toString().indexOf(filterText)!==-1
       )
       :value;
   }

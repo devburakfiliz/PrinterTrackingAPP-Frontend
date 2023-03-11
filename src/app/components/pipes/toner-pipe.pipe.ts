@@ -10,7 +10,9 @@ export class TonerPipePipe implements PipeTransform {
     filterText = filterText?filterText.toLocaleLowerCase():""
       return filterText?value.filter((t:Toner)=>t.serialNumber.toLocaleLowerCase().indexOf(filterText)!==-1
       ||t.modelName.toLocaleLowerCase().indexOf(filterText)!==-1
-      ||t.brandName.toLocaleLowerCase().indexOf(filterText)!==-1)
+      ||t.brandName.toLocaleLowerCase().indexOf(filterText)!==-1
+      ||t.id.toString().indexOf(filterText)!==-1)
+
       :value;
   }
 }
