@@ -8,9 +8,11 @@ export class PrinterFilterPipe implements PipeTransform {
 
   transform(value: Printer[], filterText:string): Printer [] {
     filterText = filterText?filterText.toLocaleLowerCase():""
-      return filterText?value.filter((p:Printer)=>p.serialNumber.toLocaleLowerCase().indexOf(filterText)!==-1
+      return filterText?value.filter((p:Printer)=>
+        p.serialNumber.toLocaleLowerCase().indexOf(filterText)!==-1
       ||p.modelName.toLocaleLowerCase().indexOf(filterText)!==-1
-      ||p.brandName.toLocaleLowerCase().indexOf(filterText)!==-1)
+      ||p.brandName.toLocaleLowerCase().indexOf(filterText)!==-1
+      )
       :value;
   }
 

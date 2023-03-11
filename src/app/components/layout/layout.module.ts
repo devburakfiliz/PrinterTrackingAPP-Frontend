@@ -20,7 +20,10 @@ import { AdminPageComponent } from '../admin-page/admin-page.component';
 import { PrinterImageComponent } from '../printerApp/printer-image/printer-image.component';
 import { StorageComponent } from '../storage/storage.component';
 import { PrinterComponent } from '../printerApp/printer/printer.component';
-import { UserComponent } from '../user/user.component';
+import { UserComponent } from '../userApp/user/user.component';
+import { TonerPipePipe } from '../pipes/toner-pipe.pipe';
+import { UserAddComponent } from '../userApp/user-add/user-add.component';
+
 
 
 
@@ -42,6 +45,8 @@ import { UserComponent } from '../user/user.component';
     AdminPageComponent,
     PrinterComponent,
     UserComponent,
+    TonerPipePipe,
+    UserAddComponent,
   ],
   imports: [
     CommonModule,

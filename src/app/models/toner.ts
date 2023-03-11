@@ -4,5 +4,5 @@ export interface Toner {
     modelId:number;
     serialNumber:string;
     modelName:string;
-    brandName:number;
+    brandName:string;
 }

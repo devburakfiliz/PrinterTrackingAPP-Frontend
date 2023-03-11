@@ -1,34 +1,48 @@
-
-<h1 class="title">TONER ENVANTERİ</h1>
-<button style="    background: #2581DC; float: left; margin: 15px; " >TONER EKLE</button>    
-
-<button  style="    background: #870202; float: right;margin: 15px; " >TONER SİL</button>    
-
-<div class="table-wrapper">
-  
-    <table class="fl-table">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Toner Seri Numarası</th>
-            <th>Toner Marka</th>
-            <th>Toner Model</th>
+<div class="boddy">
+    <h1 class="title">TONER ENVANTERİ</h1>
+    <div class="mb-3">
+        <input
+          type="text"
+          [(ngModel)]="filterText"
+          class="form-control"
+          id="filterText"
+          placeholder="Arama Giriniz."
+        />
+      </div>
+      <div *ngIf="filterText" class="alert alert-success">
+        {{ filterText }} aradınız.
+      </div>
+    <button *ngIf="claims.includes('storage')||claims.includes('admin')" style="    background: #2581DC; float: left; margin: 15px; " >TONER EKLE</button>    
+    
+    <button *ngIf="claims.includes('storage')||claims.includes('admin')"  style="    background: #870202; float: right;margin: 15px; " >TONER SİL</button>    
+    
+    <div class="table-wrapper">
+      
+        <table class="fl-table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Toner Seri Numarası</th>
+                <th>Toner Marka</th>
+                <th>Toner Model</th>
+                
             
+            </tr>
+            </thead>
+            <tbody *ngFor="let toner of toners| tonerPipe:filterText,filter">
+            <tr>
+                <td>{{toner.id}}</td>
+                <td>{{toner.serialNumber}}</td>
+                <td>{{toner.brandName}}</td>
+                <td>{{toner.modelName}}</td>
+     
+            </tr>
+            
+            <tbody>
+        </table>
         
-        </tr>
-        </thead>
-        <tbody *ngFor="let toner of toners">
-        <tr>
-            <td>{{toner.id}}</td>
-            <td>{{toner.serialNumber}}</td>
-            <td>{{toner.brandName}}</td>
-            <td>{{toner.modelName}}</td>
- 
-        </tr>
         
-        <tbody>
-    </table>
     
+    </div>
     
-
 </div>

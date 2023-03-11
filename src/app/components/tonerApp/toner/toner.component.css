@@ -4,10 +4,10 @@
     -moz-box-sizing: border-box;
 }
 
-body{
-    font-family: Helvetica;
-    -webkit-font-smoothing: antialiased;
-    background: rgba( 71, 147, 227, 1);
+.boddy{
+    width: 1200px;
+    
+    margin: auto;
 }
 h1{
     text-align: center;
