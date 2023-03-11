@@ -16,16 +16,11 @@ import { TonerAddComponent } from '../tonerApp/toner-add/toner-add.component';
 import { TonerDeleteComponent } from '../tonerApp/toner-delete/toner-delete.component';
 import { TonerUpdateComponent } from '../tonerApp/toner-update/toner-update.component';
 import { PrinterFilterPipe } from '../pipes/printer-filter.pipe';
-import { AdminPageComponent } from '../admin-page/admin-page.component';
 import { PrinterImageComponent } from '../printerApp/printer-image/printer-image.component';
 import { StorageComponent } from '../storage/storage.component';
 import { PrinterComponent } from '../printerApp/printer/printer.component';
 import { UserComponent } from '../userApp/user/user.component';
 import { TonerPipePipe } from '../pipes/toner-pipe.pipe';
-import { UserAddComponent } from '../userApp/user-add/user-add.component';
-
-
-
 
 @NgModule({
   declarations: [
@@ -42,11 +37,9 @@ import { UserAddComponent } from '../userApp/user-add/user-add.component';
     TonerDeleteComponent,
     TonerUpdateComponent,
     PrinterFilterPipe,
-    AdminPageComponent,
     PrinterComponent,
     UserComponent,
     TonerPipePipe,
-    UserAddComponent,
   ],
   imports: [
     CommonModule,
