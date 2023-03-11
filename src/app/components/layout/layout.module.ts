@@ -21,6 +21,12 @@ import { StorageComponent } from '../storage/storage.component';
 import { PrinterComponent } from '../printerApp/printer/printer.component';
 import { UserComponent } from '../userApp/user/user.component';
 import { TonerPipePipe } from '../pipes/toner-pipe.pipe';
+import { PrinterBrandComponent } from '../printer-brand/printer-brand.component';
+import { PrinterModelComponent } from '../printer-model/printer-model.component';
+import { TonerModelComponent } from '../toner-model/toner-model.component';
+import { TonerBrandComponent } from '../toner-brand/toner-brand.component';
+import { ProfileComponent } from '../profile/profile.component';
+
 
 @NgModule({
   declarations: [
@@ -40,6 +46,11 @@ import { TonerPipePipe } from '../pipes/toner-pipe.pipe';
     PrinterComponent,
     UserComponent,
     TonerPipePipe,
+    PrinterBrandComponent,
+    PrinterModelComponent,
+    TonerModelComponent,
+    TonerBrandComponent,  
+    ProfileComponent
   ],
   imports: [
     CommonModule,

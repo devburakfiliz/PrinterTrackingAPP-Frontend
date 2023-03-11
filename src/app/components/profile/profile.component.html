@@ -1,0 +1,55 @@
+<div class="bdy">
+    <img
+    [src]="getImagePath()"
+    class=" resim"
+    alt="..."
+   />
+  
+    
+    <body class="text-center ">
+  
+       
+    
+  
+      <main class="form-signin w-100 m-auto">
+        <form [formGroup]="passwordForm">
+          <!-- <img class="mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
+          <h1 class="h3 mb-3 fw-normal">Şifre Değiştir</h1>
+    
+          <div class="form-floating">
+            <input
+              formControlName="oldPassword"
+              type="password"
+              class="form-control"
+              id="oldPassword"
+              placeholder="Eski Şifrenizi Giriniz"
+            />
+            <label for="floatingInput">Eski Şifre </label>
+          </div>
+          <div class="form-floating">
+            <input
+              formControlName="newPassword"
+              type="password"
+              class="form-control"
+              id="newPassword"
+              placeholder="Yeni Şifrenizi Giriniz"
+            />
+            <label for="floatingPassword">Yeni Şifre</label>
+          </div>
+    
+          <div class="checkbox mb-3">
+            
+          </div>
+          <button (click)="changePassword()" style=" background: #01932d;  margin: 15px; " >Şifre Değiştir</button>    
+          <p class="mt-5 mb-3 text-muted"> Manisa Celal Bayar Üniversitesi <br> Hafsa Sultan Hastanesi<br> Bilgi İşlem Departmanı</p>
+        </form>
+      </main>
+    </body>
+    
+  
+  
+  
+  </div>
+  
+  
+  

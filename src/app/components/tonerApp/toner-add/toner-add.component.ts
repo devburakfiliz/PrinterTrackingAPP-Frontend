@@ -1,26 +1,37 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { TonerBrand } from 'src/app/models/tonerBrand';
+import { TonerModel } from 'src/app/models/tonerModel';
 import { PrinterService } from 'src/app/services/printer.service';
+import { TonerBrandService } from 'src/app/services/toner-brand.service';
+import { TonerModelService } from 'src/app/services/toner-model.service';
+import { TonerService } from 'src/app/services/toner.service';
 
 @Component({
   selector: 'app-toner-add',
   templateUrl: './toner-add.component.html',
   styleUrls: ['./toner-add.component.css']
 })
-export class TonerAddComponent implements OnInit{
-   printerAddForm:FormGroup;
+export class TonerAddComponent {
+  brands : TonerBrand [] = [];
+  models : TonerModel [] = [];
+  tonerAddForm:FormGroup;
 
   constructor(private formBuilder:FormBuilder,
-    private printerService:PrinterService,
+    private tonerService:TonerService,
+    private tonerBrandService:TonerBrandService,
+    private tonerModelService:TonerModelService,
     private toastrService:ToastrService){}
 
   ngOnInit(): void {
-    
+    this.createTonerAddForm();
+    this.getTonerBrands();
+    this.getTonerModels();
   }
 
-  createCarAddForm(){
-    this.printerAddForm=this.formBuilder.group({
+  createTonerAddForm(){
+    this.tonerAddForm=this.formBuilder.group({
       serialNumber:["",Validators.required],
       brandId:["",Validators.required],
       modelId:["",Validators.required],
@@ -28,10 +39,10 @@ export class TonerAddComponent implements OnInit{
     })
   }
   add(){
-    if (this.printerAddForm.valid) {
-      let printer = Object.assign({}, this.printerAddForm.value);
+    if (this.tonerAddForm.valid) {
+      let printer = Object.assign({}, this.tonerAddForm.value);
       
-        this.printerService.add(printer).subscribe(response=>{
+        this.tonerService.add(printer).subscribe(response=>{
         this.toastrService.success(response.message, "Başarılı!");
         
       } ,responseError=>{  
@@ -50,5 +61,19 @@ export class TonerAddComponent implements OnInit{
       this.toastrService.error("Lütfen tüm alanları doldurunuz.", "Hata!")
     }
   }
+  getTonerBrands(){
+    this.tonerBrandService.getTonerBrands().subscribe((response)=>{
+      this.brands=response.data
+    })
+  }
+
+  getTonerModels(){
+    this.tonerModelService.getTonerBrands().subscribe((response)=>{
+      this.models=response.data
+    })
+  }
+
+
+
 
 }

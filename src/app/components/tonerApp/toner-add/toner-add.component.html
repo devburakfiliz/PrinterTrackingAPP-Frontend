@@ -1,1 +1,39 @@
 
+<body>
+    <div class="container">
+        <div class="title">Toner Ekle</div>
+        <form [formGroup]="tonerAddForm">
+            <div class="user_details">
+                <div class="input_pox">
+                    <span class="datails">Toner Seri Numarası:</span>
+                    <input type="text" placeholder="Toner Seri Numarası Giriniz" required
+                        id="serialNumber" 
+                        formControlName="serialNumber"
+                        />
+                </div>
+                <div class="input_pox">
+                    <span class="datails">Marka</span>
+                    <select class="form-select form-select-lg" type="number" placeholder="Marka Giriniz" required
+                    id="brandId" 
+                    formControlName="brandId"
+                    >
+                    <option *ngFor="let brand of brands" [value]="brand.id">{{brand.brandName}}</option>
+                </select>
+                </div>
+                <div class="input_pox">
+                    <span class="datails">Model</span>
+                    <select class="form-select form-select-lg" type="number" placeholder="Model Giriniz" required
+                    id="modelId" 
+                    formControlName="modelId"
+                    >
+                    <option *ngFor="let model of models" [value]="model.id">{{model.modelName}}</option>
+                </select>
+                </div>
+               
+            </div>
+           
+            <button (click)="add()" style="    background: #2581DC; align-items: center;  margin: 15px; " >Yazıcıyı Ekle</button>    
+
+        </form>
+    </div>
+</body>

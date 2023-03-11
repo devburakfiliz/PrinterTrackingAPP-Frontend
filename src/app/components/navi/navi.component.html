@@ -26,8 +26,12 @@
           <a routerLink="login">Giriş Yap</a>
         </li>
         <li *ngIf="isLoggedIn">
+          <a routerLink="/passwordchange" >Şifre Değiştir</a>
+        </li>
+        <li *ngIf="isLoggedIn">
           <a (click)="logout()" >Çıkış Yap</a>
         </li>
+        
 
       </ul>
     </nav>
