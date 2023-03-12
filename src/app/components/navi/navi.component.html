@@ -6,21 +6,45 @@
     <nav>
       <div class="nav-mobile"><a id="navbar-toggle" href="#!"><span></span></a></div>
       <ul class="nav-list">
-        <li>
+        <!-- <li>
           <a routerLink="">Anasayfa</a>
-        </li>
+        </li> -->
         <li>
           <a href="#!"></a>
         </li>
-        <li>
-          <a routerLink="printer">Yazıcılar</a>
-        </li>
+       
+        
         <li >
-          <a routerLink="toner">Tonerler</a>
+          <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Envanter
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a style="color: rgb(0, 0, 0);" routerLink="printer">Yazıcı Envanteri</a>
+            </li>
+            <li>
+              <a style="color: rgb(0, 0, 0);" routerLink="toner">Toner Envanteri</a>
+            </li>
+            
+          </ul>
         </li>
-        <li *ngIf="claims.includes('admin')">
-          <a routerLink="admin">ADMİN PANELİ</a>
+
+        <li >
+          <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Servis Takip
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a style="color: rgb(0, 0, 0);" routerLink="/">Yazıcı Servis</a>
+            </li>
+            <li>
+              <a style="color: rgb(0, 0, 0);" routerLink="tonerTracking">Toner Servis</a>
+            </li>
+            
+          </ul>
         </li>
+        
+        
         
         <li *ngIf="!isLoggedIn">
           <a routerLink="login">Giriş Yap</a>
@@ -31,6 +55,18 @@
         <li *ngIf="isLoggedIn">
           <a (click)="logout()" >Çıkış Yap</a>
         </li>
+        
+
+        <ol class="navi" *ngIf="claims.includes('admin')">
+          <h6 routerLink="admin" >ADMİN PANELİ </h6>
+        </ol>
+        <ol class="navi" *ngIf="claims.includes('provider')">
+          <h5 >Tedarikçi </h5>
+        </ol>
+        <ol class="navi" *ngIf="claims.includes('storage')">
+          <h5 >Depo </h5>
+        </ol>
+      
         
 
       </ul>

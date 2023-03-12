@@ -12,10 +12,12 @@ import { LoginComponent } from './components/login/login.component';
 import { AuthInterceptor } from './intercepters/auth.interceptor';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    
     
     
   ],

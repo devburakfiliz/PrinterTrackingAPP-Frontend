@@ -35,6 +35,7 @@ export class TonerAddComponent {
       serialNumber:["",Validators.required],
       brandId:["",Validators.required],
       modelId:["",Validators.required],
+     
       
     })
   }

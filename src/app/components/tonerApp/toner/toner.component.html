@@ -21,20 +21,20 @@
         <table class="fl-table">
             <thead>
             <tr>
-                <th>ID</th>
                 <th>Toner Seri Numarası</th>
                 <th>Toner Marka</th>
                 <th>Toner Model</th>
+                <th>Toner Dolum Sayısı</th>
                 
             
             </tr>
             </thead>
             <tbody *ngFor="let toner of toners| tonerPipe:filterText,filter">
             <tr>
-                <td>{{toner.id}}</td>
                 <td>{{toner.serialNumber}}</td>
                 <td>{{toner.brandName}}</td>
                 <td>{{toner.modelName}}</td>
+                <td >{{toner.tonerRefilling}}</td>
      
             </tr>
             

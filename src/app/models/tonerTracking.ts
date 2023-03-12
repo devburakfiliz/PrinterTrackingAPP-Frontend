@@ -1,9 +1,12 @@
-export interface Toner {
+export interface TonerTracking {
     id:number;
     brandId:number;
     modelId:number;
-    tonerRefilling:number;
     serialNumber:string;
     modelName:string;
     brandName:string;
+    description:string;
+    status:string
+    tonerRefilling:number;
+
 }

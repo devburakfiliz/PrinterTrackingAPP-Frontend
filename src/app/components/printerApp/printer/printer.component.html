@@ -29,7 +29,7 @@
           <table class="fl-table">
               <thead>
               <tr>
-                  <th>ID</th>
+                  
                   <th>Yazıcı Seri Numarası</th>
                   <th>Yazıcı Marka</th>
                   <th>Yazıcı Model</th>
@@ -39,7 +39,6 @@
               </thead>
               <tbody *ngFor="let printer of printers | printerFilter:filterText,filter">
               <tr>
-                  <td>{{printer.id}}</td>
                   <td>{{printer.serialNumber}}</td>
                   <td>{{printer.brandName}}</td>
                   <td>{{printer.modelName}}</td>

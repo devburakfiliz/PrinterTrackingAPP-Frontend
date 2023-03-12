@@ -1,0 +1,53 @@
+<div class="boddy">
+    <h1 class="title">TONER SERVİS TAKİP</h1>
+    <div class="mb-3">
+        <input
+          type="text"
+          [(ngModel)]="filterText"
+          class="form-control"
+          id="filterText"
+          placeholder="Arama Giriniz."
+        />
+      </div>
+      <div *ngIf="filterText" class="alert alert-success">
+        {{ filterText }} aradınız.
+      </div>
+      <button *ngIf="claims.includes('storage')||claims.includes('admin')" routerLink="/printer/add" style="    background: #2581DC; float: left; margin: 15px; " >ARIZA EKLE</button>    
+      <button *ngIf="claims.includes('provider')" routerLink="/printer/add" style="    background: #009532; float: left; margin: 15px; width: 200PX;" > DURUM GÜNCELLE </button>    
+      
+      <button *ngIf="claims.includes('storage')||claims.includes('admin')"  style="    background: #870202; float: right;margin: 15px; " >ARIZA SİL</button>    
+      
+    <div class="table-wrapper">
+      
+        <table class="fl-table">
+            <thead>
+            <tr>
+                <th>Toner Seri Numarası</th>
+                <th>Toner Marka</th>
+                <th>Toner Model</th>
+                <th>Toner Dolum Sayısı</th>
+                <th>Gönderilme Sebebi</th>
+                <th>Tedarikçi Notu</th>
+                
+            
+            </tr>
+            </thead>
+            <tbody *ngFor="let tonerTracking of tonerTrackings | tonerTrackingFilter:filterText,filter">
+            <tr>
+                <td>{{tonerTracking.serialNumber}}</td>
+                <td>{{tonerTracking.brandName}}</td>
+                <td>{{tonerTracking.modelName}}</td>
+                <td >{{tonerTracking.tonerRefilling}}</td>
+                <td >{{tonerTracking.description}}</td>
+                <td >{{tonerTracking.status}}</td>
+     
+            </tr>
+            
+            <tbody>
+        </table>
+        
+        
+    
+    </div>
+    
+</div>

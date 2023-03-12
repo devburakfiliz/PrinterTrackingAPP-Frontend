@@ -18,6 +18,7 @@ body{
 }
  .brand a, .brand a:visited {
      color: #ffffff;
+    
      text-decoration: none;
 }
  .nav-container {
@@ -149,4 +150,11 @@ body{
  #navbar-toggle.active span:after {
      transform: rotate(-45deg);
 }
+ }
+
+ .navi{
+
+    color: darkgray;
+    float: right;
+    margin-top: 15px;
  }

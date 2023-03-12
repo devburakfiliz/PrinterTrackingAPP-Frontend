@@ -15,17 +15,19 @@ import { PrinterUpdateComponent } from '../printerApp/printer-update/printer-upd
 import { TonerAddComponent } from '../tonerApp/toner-add/toner-add.component';
 import { TonerDeleteComponent } from '../tonerApp/toner-delete/toner-delete.component';
 import { TonerUpdateComponent } from '../tonerApp/toner-update/toner-update.component';
-import { PrinterFilterPipe } from '../pipes/printer-filter.pipe';
+import { PrinterFilterPipe } from '../../pipes/printer-filter.pipe';
 import { PrinterImageComponent } from '../printerApp/printer-image/printer-image.component';
 import { StorageComponent } from '../storage/storage.component';
 import { PrinterComponent } from '../printerApp/printer/printer.component';
 import { UserComponent } from '../userApp/user/user.component';
-import { TonerPipePipe } from '../pipes/toner-pipe.pipe';
-import { PrinterBrandComponent } from '../printer-brand/printer-brand.component';
-import { PrinterModelComponent } from '../printer-model/printer-model.component';
-import { TonerModelComponent } from '../toner-model/toner-model.component';
-import { TonerBrandComponent } from '../toner-brand/toner-brand.component';
+import { TonerPipePipe } from '../../pipes/toner-pipe.pipe';
+import { PrinterBrandComponent } from '../printerApp/printer-brand/printer-brand.component';
+import { PrinterModelComponent } from '../printerApp/printer-model/printer-model.component';
+import { TonerModelComponent } from '../tonerApp/toner-model/toner-model.component';
+import { TonerBrandComponent } from '../tonerApp/toner-brand/toner-brand.component';
 import { ProfileComponent } from '../profile/profile.component';
+import { TonerTrackingComponent } from '../tonerApp/toner-tracking/toner-tracking.component';
+import { TonerTrackingFilterPipe } from '../../pipes/toner-tracking-filter.pipe';
 
 
 @NgModule({
@@ -50,7 +52,10 @@ import { ProfileComponent } from '../profile/profile.component';
     PrinterModelComponent,
     TonerModelComponent,
     TonerBrandComponent,  
-    ProfileComponent
+    ProfileComponent,
+    TonerTrackingComponent,
+    TonerTrackingFilterPipe,
+
   ],
   imports: [
     CommonModule,

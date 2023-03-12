@@ -10,6 +10,7 @@ import { HomeComponent } from '../home/home.component';
 import { UserComponent } from '../userApp/user/user.component';
 import { TonerAddComponent } from '../tonerApp/toner-add/toner-add.component';
 import { ProfileComponent } from '../profile/profile.component';
+import { TonerTrackingComponent } from '../tonerApp/toner-tracking/toner-tracking.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
     {path:"users",component:UserComponent},
     {path:"passwordchange",component:ProfileComponent},
     {path:"printer",component:PrinterComponent, canActivate:[LoginGuard]},
+    {path:"tonerTracking",component:TonerTrackingComponent, canActivate:[LoginGuard]},
   ]},
 ];
 

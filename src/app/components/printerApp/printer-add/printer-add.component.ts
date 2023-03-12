@@ -51,6 +51,8 @@ export class PrinterAddComponent {
         console.log(responseError.error.message)
 
         if(responseError){
+
+          console.log(responseError)
          
             this.toastrService.error(responseError.error.message
               ,"Doğrulama hatası")
