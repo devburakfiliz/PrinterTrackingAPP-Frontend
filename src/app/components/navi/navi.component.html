@@ -14,7 +14,7 @@
         </li>
        
         
-        <li >
+        <li *ngIf="isLoggedIn">
           <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Envanter
           </a>
@@ -25,11 +25,12 @@
             <li>
               <a style="color: rgb(0, 0, 0);" routerLink="toner">Toner Envanteri</a>
             </li>
+           
             
           </ul>
         </li>
 
-        <li >
+        <li *ngIf="isLoggedIn">
           <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Servis Takip
           </a>

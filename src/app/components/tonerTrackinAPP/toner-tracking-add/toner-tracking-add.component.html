@@ -1,0 +1,54 @@
+
+<body>
+    <div class="container">
+        <div class="title">Toner Servis Kayıt</div>
+        <form [formGroup]="trackingAddForm">
+            <div class="user_details">
+                
+                <div class="input_pox">
+                    <span class="datails">Toner Seri Numarası</span>
+                    <select class="form-select form-select-lg" type="text" placeholder="Seri numara" required
+                    id="tonerId" 
+                    formControlName="tonerId"
+                    >
+                    <option *ngFor="let toner of toners" [value]="toner.id">{{toner.serialNumber}}</option>
+                </select>
+                </div>
+                
+                <div class="input_pox">
+                    <span class="datails">Marka</span>
+                    <select class="form-select form-select-lg" type="number" placeholder="Marka Giriniz" required
+                    id="brandId" 
+                    formControlName="brandId"
+                    >
+                    <option *ngFor="let brand of brands" [value]="brand.id">{{brand.brandName}}</option>
+                </select>
+                </div>
+                <div class="input_pox">
+                    <span class="datails">Model</span>
+                    <select class="form-select form-select-lg" type="number" placeholder="Model Giriniz" required
+                    id="modelId" 
+                    formControlName="modelId"
+                    >
+                    <option *ngFor="let model of models" [value]="model.id">{{model.modelName}}</option>
+                </select>
+                </div>
+
+                <div class="input_pox">
+                    <span class="datails">Arıza Durumu</span>
+                    <input type="text" placeholder="Durum girin" required
+                        id="description" 
+                        formControlName="description"
+                        />
+                </div>
+
+                
+                
+               
+            </div>
+           
+            <button (click)="add()" style="    background: #2581DC; align-items: center;  margin: 15px; " >Arıza Ekle</button>    
+
+        </form>
+    </div>
+</body>

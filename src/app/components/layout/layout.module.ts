@@ -26,8 +26,12 @@ import { PrinterModelComponent } from '../printerApp/printer-model/printer-model
 import { TonerModelComponent } from '../tonerApp/toner-model/toner-model.component';
 import { TonerBrandComponent } from '../tonerApp/toner-brand/toner-brand.component';
 import { ProfileComponent } from '../profile/profile.component';
-import { TonerTrackingComponent } from '../tonerApp/toner-tracking/toner-tracking.component';
+import { TonerTrackingComponent } from '../tonerTrackinAPP/toner-tracking/toner-tracking.component';
 import { TonerTrackingFilterPipe } from '../../pipes/toner-tracking-filter.pipe';
+import { TonerTrackingAddComponent } from '../tonerTrackinAPP/toner-tracking-add/toner-tracking-add.component';
+import { TonerTrackingDeleteComponent } from '../tonerTrackinAPP/toner-tracking-delete/toner-tracking-delete.component';
+import { TonerTrackingUpdateComponent } from '../tonerTrackinAPP/toner-tracking-update/toner-tracking-update.component';
+
 
 
 @NgModule({
@@ -55,6 +59,9 @@ import { TonerTrackingFilterPipe } from '../../pipes/toner-tracking-filter.pipe'
     ProfileComponent,
     TonerTrackingComponent,
     TonerTrackingFilterPipe,
+    TonerTrackingAddComponent,
+    TonerTrackingDeleteComponent,
+    TonerTrackingUpdateComponent,
 
   ],
   imports: [
