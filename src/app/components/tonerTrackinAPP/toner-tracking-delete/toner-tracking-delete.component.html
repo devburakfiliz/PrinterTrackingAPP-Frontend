@@ -1,1 +1,63 @@
-<p>toner-tracking-delete works!</p>
+
+<body>
+    <div class="container">
+        <div class="title">Toner Servis Silme</div>
+        <form [formGroup]="trackingDeleteForm">
+            <div class="user_details">
+
+                <div class="input_pox">
+                    <span class="datails">Toner Arıza Numarası</span>
+                    <select class="form-select form-select-lg" type="number" placeholder="Id" required
+                    id="id" 
+                    formControlName="id"
+                    >
+                    <option *ngFor="let traking of trakings"[value]="traking.id" >{{traking.id}}</option>
+                </select>
+                </div>
+                
+                <div class="input_pox">
+                    <span class="datails">Toner Seri Numarası</span>
+                    <select class="form-select form-select-lg" type="text" placeholder="Seri numara" required
+                    id="tonerId" 
+                    formControlName="tonerId"
+                    >
+                    <option *ngFor="let toner of toners" [value]="toner.id">{{toner.serialNumber}}</option>
+                </select>
+                </div>
+                
+                <div class="input_pox">
+                    <span class="datails">Marka</span>
+                    <select class="form-select form-select-lg" type="number" placeholder="Marka Giriniz" required
+                    id="brandId" 
+                    formControlName="brandId"
+                    >
+                    <option *ngFor="let brand of brands" [value]="brand.id">{{brand.brandName}}</option>
+                </select>
+                </div>
+                <div class="input_pox">
+                    <span class="datails">Model</span>
+                    <select class="form-select form-select-lg" type="number" placeholder="Model Giriniz" required
+                    id="modelId" 
+                    formControlName="modelId"
+                    >
+                    <option *ngFor="let model of models" [value]="model.id">{{model.modelName}}</option>
+                </select>
+                </div>
+
+
+                <div class="input_pox">
+                    <span class="datails">Arıza Durumu</span>
+                    <select class="form-select form-select-lg" type="number" placeholder="Arıza Durumu" required
+                    id="description" 
+                    formControlName="description"
+                    >
+                    <option *ngFor="let traking of trakings" [value]="traking.description">{{traking.description}}</option>
+                </select>
+                </div>
+             
+            </div>
+           
+            <button (click)="remove()" style="    background: #860000; align-items: center;  margin: 15px; " >ARIZA SİL</button>    
+        </form>
+    </div>
+</body>

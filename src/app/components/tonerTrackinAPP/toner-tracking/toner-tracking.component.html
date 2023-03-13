@@ -13,15 +13,15 @@
         {{ filterText }} aradınız.
       </div>
       <button *ngIf="claims.includes('storage')||claims.includes('admin')" routerLink="/tonerTracking/add" style="    background: #2581DC; float: left; margin: 15px; " >ARIZA EKLE</button>    
-      <button *ngIf="claims.includes('provider')" routerLink="/printer/update" style="    background: #009532; float: left; margin: 15px; width: 200PX;" > DURUM GÜNCELLE </button>    
+      <button *ngIf="claims.includes('provider')" routerLink="/tonerTracking/update" style="    background: #009532; float: left; margin: 15px; width: 200PX;" > DURUM GÜNCELLE </button>    
       
-      <button *ngIf="claims.includes('storage')||claims.includes('admin')"  style="    background: #870202; float: right;margin: 15px; " >ARIZA SİL</button>    
       
     <div class="table-wrapper">
       
         <table class="fl-table">
             <thead>
             <tr>
+                <th>Arıza Id</th>
                 <th>Toner Seri Numarası</th>
                 <th>Toner Marka</th>
                 <th>Toner Model</th>
@@ -30,16 +30,24 @@
             
             </tr>
             </thead>
-            <tbody *ngFor="let tonerTracking of tonerTrackings | tonerTrackingFilter:filterText,filter">
-            <tr>
-                <td>{{tonerTracking.serialNumber}}</td>
-                <td>{{tonerTracking.brandName}}</td>
-                <td>{{tonerTracking.modelName}}</td>
-                <td >{{tonerTracking.description}}</td>
-     
-            </tr>
+
             
-            <tbody>
+              <tbody *ngFor="let tonerTracking of tonerTrackings  | tonerTrackingFilter:filterText,filter">
+                <tr>
+                    <td>{{tonerTracking.id}}</td>   
+                    <td>{{tonerTracking.serialNumber}}</td>
+                    <td>{{tonerTracking.brandName}}</td>
+                    <td>{{tonerTracking.modelName}}</td>
+                    <td >{{tonerTracking.description}}</td>
+                    <button (click)="deleted(tonerTracking.id)" *ngIf="claims.includes('storage')||claims.includes('admin')" style="    background: #860000; align-items: center;  margin: 15px; " >ARIZA SİL</button>    
+    
+         
+                </tr>
+                
+                <tbody>
+
+
+            
         </table>
         
         

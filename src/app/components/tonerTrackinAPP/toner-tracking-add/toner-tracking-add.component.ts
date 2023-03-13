@@ -85,6 +85,9 @@ export class TonerTrackingAddComponent implements OnInit {
   getToner(){
     this.tonerService.getToner(). subscribe((response)=>{
       this.toners=response.data   })
-    }
+
+    
+  }
+      
 
 }

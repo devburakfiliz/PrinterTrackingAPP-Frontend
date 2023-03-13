@@ -24,4 +24,5 @@ export class TonerService {
     return this.httpClient.post<ResponseModel>(this.apiUrl+"toner/update",toner)
   }
   
+  
 }

@@ -23,7 +23,11 @@ export class TonerTrackingService {
   update(toner:TonerTracking):Observable<ResponseModel>{
     return this.httpClient.post<ResponseModel>(this.apiUrl+"tonertracking/update",toner)
   }
-  delete(toner:TonerTracking):Observable<ResponseModel>{
-    return this.httpClient.post<ResponseModel>(this.apiUrl+"tonertracking/delete",toner)
+  remove(toner:TonerTracking):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(this.apiUrl+"TonerTracking/delete",toner)
+  }
+
+  deleted(id: number){   
+    return this.httpClient.delete<ResponseModel>(this.apiUrl + "TonerTracking/delete?id=" + id);
   }
 }
